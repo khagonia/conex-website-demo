@@ -125,6 +125,58 @@
 .nav__link:hover, .nav__link[aria-current="page"] { color: var(--brand-600); }
 .nav__link:hover::after, .nav__link[aria-current="page"]::after { transform: scaleX(1); }
 
+/* Dropdown nav */
+.nav__item { position: relative; }
+.nav__link--parent { display: inline-flex; align-items: center; gap: .35rem; }
+.nav__caret {
+  width: 11px; height: 11px;
+  transition: transform var(--dur-fast) var(--ease);
+}
+.nav__item--parent:hover .nav__caret,
+.nav__item--parent:focus-within .nav__caret { transform: rotate(180deg); }
+
+.nav__menu {
+  position: absolute;
+  top: calc(100% + .75rem);
+  left: 50%;
+  min-width: 15rem;
+  display: grid;
+  gap: 2px;
+  padding: var(--space-2);
+  background: #fff;
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 8px);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), visibility var(--dur);
+}
+.nav__menu::before {
+  content: "";
+  position: absolute;
+  top: -.75rem;
+  left: 0; right: 0;
+  height: .75rem;
+}
+.nav__item--parent:hover .nav__menu,
+.nav__item--parent:focus-within .nav__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+.nav__menu a {
+  display: block;
+  padding: .55rem .75rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--ink-700);
+  white-space: nowrap;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.nav__menu a:hover, .nav__menu a:focus-visible { background: var(--brand-050); color: var(--brand-600); }
+
 .header__actions { display: flex; align-items: center; gap: var(--space-4); }
 
 .header__phone {
@@ -199,6 +251,37 @@
   font-weight: 500;
   color: var(--ink-800);
   border-bottom: 1px solid var(--ink-100);
+}
+
+/* Mobile dropdown groups */
+.mobile-nav__group { border-bottom: 1px solid var(--ink-100); }
+.mobile-nav__group-row { display: flex; align-items: center; }
+.mobile-nav__group-row .mobile-nav__group-link { flex: 1; border-bottom: 0; }
+.mobile-nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink-500);
+  cursor: pointer;
+}
+.mobile-nav__caret { width: 14px; height: 14px; transition: transform var(--dur-fast) var(--ease); }
+.mobile-nav__toggle[aria-expanded="true"] .mobile-nav__caret { transform: rotate(180deg); }
+.mobile-nav__submenu {
+  display: none;
+  padding: 0 0 var(--space-2) var(--space-4);
+}
+.mobile-nav__submenu.is-open { display: block; }
+.mobile-nav__submenu a {
+  padding: .55rem .25rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--ink-600);
+  border-bottom: 0;
 }
 
 /* ---------------- Cards ---------------- */

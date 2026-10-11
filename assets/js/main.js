@@ -40,6 +40,16 @@
     });
   }
 
+  /* ---- Mobile nav submenus ---- */
+  document.querySelectorAll(".mobile-nav__toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      if (panel) panel.classList.toggle("is-open", !open);
+    });
+  });
+
   /* ---- Hero video ---- */
   var heroVideo = document.querySelector(".hero__video");
   if (heroVideo) {

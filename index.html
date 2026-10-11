@@ -46,11 +46,42 @@
 
       <nav class="nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#services">Services</a></li>
-          <li><a class="nav__link" href="#projects">Projects</a></li>
-          <li><a class="nav__link" href="#gallery">On Site</a></li>
-          <li><a class="nav__link" href="#stories">Stories</a></li>
-          <li><a class="nav__link" href="#about">About</a></li>
+          <li class="nav__item">
+            <a class="nav__link" href="https://cctconst.com/">Home</a>
+          </li>
+          <li class="nav__item nav__item--parent">
+            <a class="nav__link nav__link--parent" href="https://cctconst.com/about-cct-constructors/" aria-haspopup="true" aria-expanded="false">
+              About
+              <svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="nav__menu">
+              <li><a href="https://cctconst.com/about-cct-constructors/#history">History</a></li>
+              <li><a href="https://cctconst.com/about-cct-constructors/#value">Value Propositions</a></li>
+              <li><a href="https://cctconst.com/about-cct-constructors/#nationwide">Nationwide Footprint</a></li>
+              <li><a href="https://cctconst.com/about-cct-constructors/#vision">Vision, Mission, Values and Pillars</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--parent">
+            <a class="nav__link nav__link--parent" href="https://cctconst.com/construction-services-philippines/" aria-haspopup="true" aria-expanded="false">
+              Services &amp; Projects
+              <svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="nav__menu">
+              <li><a href="https://cctconst.com/construction-services-philippines/#projects">Projects</a></li>
+              <li><a href="https://cctconst.com/construction-services-philippines/#services">Services &amp; Methodologies</a></li>
+              <li><a href="https://cctconst.com/construction-services-philippines/#coreexpertise">Core Expertise</a></li>
+            </ul>
+          </li>
+          <li class="nav__item nav__item--parent">
+            <a class="nav__link nav__link--parent" href="https://cctconst.com/construction-careers-philippines/" aria-haspopup="true" aria-expanded="false">
+              Careers
+              <svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="nav__menu">
+              <li><a href="https://cctconst.com/construction-careers-philippines/#vacancies">Vacancies</a></li>
+              <li><a href="https://cctconst.com/construction-careers-philippines/#employee-testimonials">Testimonials</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
@@ -70,11 +101,46 @@
   <div class="mobile-nav" id="mobileNav">
     <nav aria-label="Mobile">
       <ul class="mobile-nav__list">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#gallery">On Site</a></li>
-        <li><a href="#stories">Stories</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="https://cctconst.com/">Home</a></li>
+        <li class="mobile-nav__group">
+          <div class="mobile-nav__group-row">
+            <a class="mobile-nav__group-link" href="https://cctconst.com/about-cct-constructors/">About</a>
+            <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mnav-about" aria-label="Toggle About submenu">
+              <svg class="mobile-nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <ul class="mobile-nav__submenu" id="mnav-about">
+            <li><a href="https://cctconst.com/about-cct-constructors/#history">History</a></li>
+            <li><a href="https://cctconst.com/about-cct-constructors/#value">Value Propositions</a></li>
+            <li><a href="https://cctconst.com/about-cct-constructors/#nationwide">Nationwide Footprint</a></li>
+            <li><a href="https://cctconst.com/about-cct-constructors/#vision">Vision, Mission, Values and Pillars</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__group">
+          <div class="mobile-nav__group-row">
+            <a class="mobile-nav__group-link" href="https://cctconst.com/construction-services-philippines/">Services &amp; Projects</a>
+            <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mnav-services" aria-label="Toggle Services and Projects submenu">
+              <svg class="mobile-nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <ul class="mobile-nav__submenu" id="mnav-services">
+            <li><a href="https://cctconst.com/construction-services-philippines/#projects">Projects</a></li>
+            <li><a href="https://cctconst.com/construction-services-philippines/#services">Services &amp; Methodologies</a></li>
+            <li><a href="https://cctconst.com/construction-services-philippines/#coreexpertise">Core Expertise</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav__group">
+          <div class="mobile-nav__group-row">
+            <a class="mobile-nav__group-link" href="https://cctconst.com/construction-careers-philippines/">Careers</a>
+            <button class="mobile-nav__toggle" type="button" aria-expanded="false" aria-controls="mnav-careers" aria-label="Toggle Careers submenu">
+              <svg class="mobile-nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <ul class="mobile-nav__submenu" id="mnav-careers">
+            <li><a href="https://cctconst.com/construction-careers-philippines/#vacancies">Vacancies</a></li>
+            <li><a href="https://cctconst.com/construction-careers-philippines/#employee-testimonials">Testimonials</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <a class="mobile-nav__phone" href="tel:+63288102001">
@@ -697,11 +763,11 @@
         </picture>
       </div>
       <div class="container cta-band__inner reveal">
-        <h2>Let&rsquo;s build it right &mdash; on scope, on schedule.</h2>
+        <h2>Let&rsquo;s engineer what&rsquo;s next.</h2>
         <p>Share your plans or a short brief. Our engineering team responds within one business day with a clear next step &mdash; no obligation, no pressure.</p>
         <div class="cta-band__actions">
           <a class="btn btn--primary btn--lg" href="mailto:info@conexprime.example">Book a Free Consultation</a>
-          <a class="btn btn--light btn--lg" href="tel:+63288102001">Call +63 2 8810 2001</a>
+          <a class="btn btn--light btn--lg" href="mailto:info@conexprime.example?subject=Request%20for%20Proposal">Request a Proposal</a>
         </div>
         <p class="cta-band__note">PCAB AAAA &middot; ISO 9001 &middot; 180+ projects delivered</p>
       </div>
