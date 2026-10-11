@@ -363,6 +363,7 @@
   border: 1.5px solid var(--brand-200);
   color: var(--brand-600);
   font-size: 1.1rem;
+  line-height: 1;
   transition: transform var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .accordion__trigger[aria-expanded="true"] .accordion__icon {
