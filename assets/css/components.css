@@ -206,9 +206,8 @@
 .nav-toggle {
   display: none;
   width: 44px; height: 44px;
-  border: var(--border);
-  border-radius: var(--radius-sm);
-  background: #fff;
+  border: 0;
+  background: transparent;
   cursor: pointer;
   padding: 0;
   align-items: center;
@@ -449,7 +448,7 @@
 /* ---------------- Responsive ---------------- */
 @media (max-width: 900px) {
   .nav { display: none; }
-  .nav-toggle { display: inline-flex; }
+  .nav-toggle { display: inline-flex; justify-content: flex-end; margin-right: calc(var(--space-1) - var(--gutter)); }
   .header__actions .btn { display: none; }
   .header__phone { display: none; }
   .footer__top { grid-template-columns: 1fr; gap: var(--space-7); }
