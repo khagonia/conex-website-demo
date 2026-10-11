@@ -278,8 +278,8 @@
 .cta-band h2 { font-family: var(--font-display); color: #fff; margin: 0 0 var(--space-4); }
 .cta-band p { color: rgba(255,255,255,.85); margin: 0 0 var(--space-6); }
 .cta-band__actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
-.cta-band__note {
-  margin-top: var(--space-5);
+.cta-band .cta-band__note {
+  margin-top: var(--space-6);
   font-family: var(--font-mono);
   font-size: .6875rem;
   letter-spacing: .1em;
