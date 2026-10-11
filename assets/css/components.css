@@ -191,6 +191,17 @@
 .header__phone svg { width: 17px; height: 17px; color: var(--brand-600); flex-shrink: 0; }
 .header__phone:hover { color: var(--brand-600); }
 
+/* Mobile-only call button */
+.header__call {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 44px;
+  color: var(--ink-800);
+}
+.header__call svg { width: 21px; height: 21px; }
+.header__call:active { color: var(--brand-600); }
+
 .mobile-nav__phone {
   display: flex;
   align-items: center;
@@ -448,7 +459,9 @@
 /* ---------------- Responsive ---------------- */
 @media (max-width: 900px) {
   .nav { display: none; }
-  .nav-toggle { display: inline-flex; justify-content: flex-end; margin-right: calc(var(--space-1) - var(--gutter)); }
+  .nav-toggle { display: inline-flex; width: 36px; justify-content: center; margin-right: calc(var(--space-1) - var(--gutter)); }
+  .header__call { display: inline-flex; }
+  .header__actions { gap: var(--space-1); margin-left: auto; }
   .header__actions .btn { display: none; }
   .header__phone { display: none; }
   .footer__top { grid-template-columns: 1fr; gap: var(--space-7); }
