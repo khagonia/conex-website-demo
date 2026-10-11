@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-highlight="crimson">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conex Prime — Highlight Color Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <style>
+    /* ---- Highlight variants (override the accent tokens) ---- */
+    [data-highlight="gold"]    { --accent-700:#7A5210; --accent-600:#C8891A; --accent-500:#DDA02B; --accent-400:#EFBE59; --accent-100:#FBEED3; }
+    [data-highlight="orange"]  { --accent-700:#9A3412; --accent-600:#EA580C; --accent-500:#F97316; --accent-400:#FDBA74; --accent-100:#FFEDD5; }
+    [data-highlight="crimson"] { --accent-700:#991B1B; --accent-600:#B91C1C; --accent-500:#DC2626; --accent-400:#F87171; --accent-100:#FEE2E2; }
+    [data-highlight="scarlet"] { --accent-700:#B91C1C; --accent-600:#D7263D; --accent-500:#E11D48; --accent-400:#F87171; --accent-100:#FEE2E2; }
+    [data-highlight="teal"]    { --accent-700:#115E59; --accent-600:#0F766E; --accent-500:#14B8A6; --accent-400:#5EEAD4; --accent-100:#CCFBF1; }
+    [data-highlight="cyan"]    { --accent-700:#155E75; --accent-600:#0E7490; --accent-500:#06B6D4; --accent-400:#67E8F9; --accent-100:#CFFAFE; }
+    [data-highlight="magenta"] { --accent-700:#9D174D; --accent-600:#BE185D; --accent-500:#DB2777; --accent-400:#F9A8D4; --accent-100:#FCE7F3; }
+    [data-highlight="lime"]    { --accent-700:#3F6212; --accent-600:#4D7C0F; --accent-500:#84CC16; --accent-400:#BEF264; --accent-100:#ECFCCB; }
+    [data-highlight="graphite"]{ --accent-700:#1E293B; --accent-600:#334155; --accent-500:#475569; --accent-400:#CBD5E1; --accent-100:#E2E8F0; }
+
+    body { padding-top: 60px; }
+    .switcher {
+      position: fixed; inset: 0 0 auto 0; z-index: 3000;
+      display: flex; align-items: center; justify-content: center; gap: .4rem;
+      flex-wrap: wrap; padding: .55rem 1rem; background: var(--ink-900); color: #fff;
+    }
+    .switcher__label { font-family: var(--font-mono); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-300); margin-right: .4rem; }
+    .switcher button {
+      font-family: var(--font-sans); font-size: .8125rem; font-weight: 600;
+      color: #fff; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      padding: .4rem .8rem; border-radius: var(--radius-pill); cursor: pointer;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .switcher button:hover { background: rgba(255,255,255,.2); }
+    .switcher button.is-active { background: var(--brand-600); border-color: var(--brand-600); }
+
+    .hl-title { display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap; }
+    .hl-current { font-family: var(--font-mono); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-600); }
+    .dark-panel { background: var(--brand-900); border-radius: var(--radius-md); padding: var(--space-8); display: flex; gap: var(--space-8); align-items: center; flex-wrap: wrap; }
+    .dark-panel .stat__label, .dark-panel .n-label { color: var(--brand-200); }
+    .dark-stat .n { font-family: var(--font-display); font-size: 2.25rem; font-weight: 600; color: #fff; line-height: 1; }
+    .dark-stat .n .suffix { color: var(--accent-400); }
+    .dark-stat .n-label { margin-top: .4rem; font-family: var(--font-mono); font-size: .625rem; letter-spacing: .1em; text-transform: uppercase; }
+    .swatch-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-4); }
+    .swatch { border: 1px solid var(--ink-100); border-radius: var(--radius-sm); overflow: hidden; }
+    .swatch__chip { height: 64px; }
+    .swatch__meta { padding: .6rem .75rem; font-family: var(--font-mono); font-size: .625rem; letter-spacing: .06em; color: var(--ink-500); }
+    .swatch__meta strong { display: block; color: var(--ink-900); font-family: var(--font-sans); font-size: .8125rem; margin-bottom: .2rem; }
+  </style>
+</head>
+<body>
+  <div class="switcher" role="group" aria-label="Highlight color">
+    <span class="switcher__label">Highlight</span>
+    <button data-hl="gold">Gold</button>
+    <button data-hl="orange">Safety Orange</button>
+    <button data-hl="crimson" class="is-active">Crimson</button>
+    <button data-hl="scarlet">Scarlet</button>
+    <button data-hl="teal">Teal</button>
+    <button data-hl="cyan">Cyan</button>
+    <button data-hl="magenta">Magenta</button>
+    <button data-hl="lime">Lime</button>
+    <button data-hl="graphite">Graphite</button>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Highlight preview</span>
+        <div class="hl-title">
+          <h1 class="section-title" style="margin:0">Highlight color options</h1>
+          <span class="hl-current" id="hlName">Crimson (current site default)</span>
+        </div>
+        <p class="lead" style="margin-top:var(--space-4)">Same components, one accent token swap. Toggle above to compare in context.</p>
+      </div>
+    </section>
+
+    <section class="section section--mist">
+      <div class="container">
+        <div class="section-head section-head--center" style="margin-bottom:var(--space-7)">
+          <span class="eyebrow">On light surfaces</span>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat"><div class="stat__num">25<span class="suffix">+</span></div><div class="stat__label">Years in the Industry</div></div>
+          <div class="stat"><div class="stat__num">180<span class="suffix">+</span></div><div class="stat__label">Completed Projects</div></div>
+          <div class="stat"><div class="stat__num">2<span class="suffix">M+</span></div><div class="stat__label">SQM Delivered</div></div>
+        </div>
+
+        <div class="split" style="margin-top:var(--space-9)">
+          <div class="split__content">
+            <span class="eyebrow">Design &amp; Engineering</span>
+            <h2 class="section-title">Precision from the first drawing</h2>
+            <ul class="capability__list">
+              <li>BIM-coordinated drawings and clash detection</li>
+              <li>Value engineering and cost optimization</li>
+              <li>Structural, architectural, and MEPFS integration</li>
+            </ul>
+            <a class="link-arrow" href="#">Explore capabilities</a>
+          </div>
+          <div>
+            <span class="quote-block__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote class="quote-block__text">Conex Prime followed the drawings strictly, and issues were resolved promptly each week.</blockquote>
+            <div class="quote-block__name">Engr. M. Santos</div>
+            <div class="quote-block__role">Operations Director, Industrial Client</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:var(--space-6)">
+          <span class="eyebrow">On dark surfaces</span>
+          <h2 class="section-title">Badges &amp; stats</h2>
+        </div>
+
+        <div class="dark-panel">
+          <div class="split__badge" style="position:static">
+            <strong>180+</strong>
+            <span>Projects Nationwide</span>
+          </div>
+          <div class="dark-stat">
+            <div class="n">40<span class="suffix">+</span></div>
+            <div class="n-label">Engineers &amp; Specialists</div>
+          </div>
+          <div class="dark-stat">
+            <div class="n">12</div>
+            <div class="n-label">Regions Served</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--mist">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:var(--space-6)">
+          <span class="eyebrow">Swatches</span>
+          <h2 class="section-title">Tokens in this option</h2>
+        </div>
+        <div class="swatch-strip" id="swatches"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var buttons = document.querySelectorAll(".switcher button");
+      var nameEl = document.getElementById("hlName");
+      var swatches = document.getElementById("swatches");
+      var NAMES = {
+        gold: "Gold (original)", orange: "Safety Orange", crimson: "Crimson (current site default)",
+        scarlet: "Scarlet", teal: "Teal", cyan: "Cyan", magenta: "Magenta", lime: "Lime", graphite: "Graphite"
+      };
+
+      function renderSwatches() {
+        var cs = getComputedStyle(root);
+        var rows = [
+          ["accent-600 (light)", cs.getPropertyValue("--accent-600").trim()],
+          ["accent-500", cs.getPropertyValue("--accent-500").trim()],
+          ["accent-400 (dark)", cs.getPropertyValue("--accent-400").trim()],
+          ["accent-100", cs.getPropertyValue("--accent-100").trim()]
+        ];
+        swatches.innerHTML = rows.map(function (r) {
+          return '<div class="swatch"><div class="swatch__chip" style="background:' + r[1] + '"></div><div class="swatch__meta"><strong>' + r[0] + '</strong>' + r[1] + '</div></div>';
+        }).join("");
+      }
+
+      function apply(hl) {
+        root.setAttribute("data-highlight", hl);
+        buttons.forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-hl") === hl); });
+        nameEl.textContent = NAMES[hl] || hl;
+        renderSwatches();
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener("click", function () { apply(b.getAttribute("data-hl")); });
+      });
+
+      renderSwatches();
+    })();
+  </script>
+</body>
+</html>

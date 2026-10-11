@@ -1,0 +1,25 @@
+/* ============================================================
+   Themes — highlight accent variants
+   Switch via <html data-highlight="gold|crimson">.
+   Default (crimson) also lives in tokens.css.
+   ============================================================ */
+
+[data-highlight="crimson"] {
+  --accent-800: #7F1D1D;
+  --accent-700: #991B1B;
+  --accent-600: #B91C1C;   /* highlight on light surfaces */
+  --accent-500: #DC2626;
+  --accent-400: #F87171;   /* highlight on dark surfaces */
+  --accent-100: #FEE2E2;
+  --accent-050: #FEF2F2;
+}
+
+[data-highlight="gold"] {
+  --accent-800: #5F3F0B;
+  --accent-700: #7A5210;
+  --accent-600: #C8891A;   /* highlight on light surfaces */
+  --accent-500: #DDA02B;
+  --accent-400: #EFBE59;   /* highlight on dark surfaces */
+  --accent-100: #FBEED3;
+  --accent-050: #FDF7E9;
+}
